@@ -29,4 +29,4 @@ WORKDIR /downloads
 
 VOLUME ["/downloads"]
 
-ENTRYPOINT ["python3", "/udemy-dl/udemy-dl.py", "-o", "/downloads"]
+CMD ["/run.sh"]
