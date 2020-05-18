@@ -29,6 +29,8 @@ WORKDIR /downloads
 
 VOLUME ["/downloads"]
 
-RUN cp /downloads/cookies.txt /udemy-dl/cookies.txt
+RUN if [ -f /downloads/cookies.txt ]; then
+    cp /downloads/cookies.txt /udemy-dl/cookies.txt;
+    fi
 
 ENTRYPOINT ["python3", "/udemy-dl/udemy-dl.py", "-o", "/downloads"]
